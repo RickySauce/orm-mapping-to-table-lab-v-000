@@ -4,5 +4,5 @@ class Student
 
   def initialize(name, grade)
   end
-  
+
 end
