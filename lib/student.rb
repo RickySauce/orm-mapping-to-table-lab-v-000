@@ -2,11 +2,9 @@ class Student
   attr_accessor :name, :grade, :attributes
   attr_reader :id
 
-  def initialize(name, grade)
-    @name = name
-    @grade = grade
-    @attributes[:name] = name
-    @attributes[:grade] = grade
+  def initialize(attributes)
+    attributes.each {|key, value| self.send(("#{key}="), value)}
+    @attributes = attributes
   end
 
   def self.create_table
